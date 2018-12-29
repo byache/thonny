@@ -1,16 +1,33 @@
-# Ce document est utilisé pour former les collègues du lycée à l'utilisation de l'environnement Thonny / Python / modules "maison"
+# Formation technique.
 
- 1. Où se trouve le raccourci vers thonny
+*Ce document est utilisé pour former les collègues du lycée à l'utilisation de l'environnement Thonny / Python / modules "maison"*
 
- 2. Prise en main : 
-qqs instructions dans le shell:
-    3+4
+## 1. Où se trouve le raccourci vers thonny
+
+Démarrer > Programmes > \_Maths > Raccourcis maths > Thonny python
+
+## 2. Prise en main : 
+Quand on lance Thonny, il y a deux zones : 
+![](https://thonny.org/img/get_started.png)
+ - la zone du haut où on travaille dans un fichier, qui peut être exécuté quand on le demande, et qui peut être enregistré (sur cette image, le fichier s'appelle "Hell.py") 
+ - la zone du bas qui est un **shell** : comme un écran de calculatrice, mais qui exécute des commandes Python (on ne peut pas l'enregistrer)(c'est dans cette zone qu'apparaissent les résultats des commandes exécutées depuis un fichier de la zone du haut)
+ 
+### Quelques instructions à essayer dans le shell :
+```python
+3+4
 print("hello world")
+"hello"+"world"
+```
+### Quelques exemples à enregistrer dans un fichier :
+```python
+3+4
+print("hello world")
+"hello"+"world"
+```
+Pour exécuter le fichier, il faut cliquer sur le bouton **run** (un triangle blanc dans un disque vert).
+Il faut donner un nom au fichier. Le fichier sera sauvegardé par défaut dans : `USER/python`
 
-fichier .py : Hello world
-bouton run et sauvegarde du fichier -> dans USER/python
-
-3) qqs trucs sur python :
+## 3. Quelques trucs sur python :
 - variable -> affichage dans thonny ?
 x = 4
 y = x + 1
