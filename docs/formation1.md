@@ -75,7 +75,7 @@ type(a)
 ```
 ### 3.e. Retour sur les problèmes de typage : formule magique : ...=float(input(« ... »)) 
 
-Si vous avez essayé les lignes de code précédentes avec divers entrée tapées au clvier, vous avez peut-être remarqué que quel que soit ce qu'on tape, Python considère que ce qui vient du `ìnput()` est du type `str`.
+Si vous avez essayé les lignes de code précédentes avec diverses entrées tapées au clvier, vous avez peut-être remarqué que quel que soit ce qu'on tape, Python considère que ce qui vient du `ìnput()` est du type `str`.
 
 Du coup, cela va sans cesse provoquer des erreurs dans les programmes des élèves. Un des moyens d'éviter cela est de leur donner la ligne de `input` sous la forme suivante :
 
