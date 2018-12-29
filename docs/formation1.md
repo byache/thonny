@@ -24,24 +24,88 @@ print("hello world")
 print("hello world")
 "hello"+"world"
 ```
-Pour exécuter le fichier, il faut cliquer sur le bouton **run** (un triangle blanc dans un disque vert).
+Pour exécuter le fichier, il faut cliquer sur le bouton **run** (un triangle blanc dans un disque vert) ou appuyer sur **F5**.
 Il faut donner un nom au fichier. Le fichier sera sauvegardé par défaut dans : `USER/python`
 
 ## 3. Quelques trucs sur python :
-- variable -> affichage dans thonny ?
+### 3.a. Variable
+Une des difficulté principale pour les élèves au début (en seconde) est l'utilisation de variables.
+
+Quelques lignes à tester :
+```python
 x = 4
 y = x + 1
 print(y)
+```
+### 3.b. Typage et ce que provoque l’absence de typage 
+Les variables peuvent être de différent type : par exemple "entier" `int` ou "chaîne de caractères (texte)" `str` ou encore "nombre à virgule flottante" `float`. 
 
-- typage et ce que provoque l’absence de typage (3*’m’, ‘3’+’m’, 3+’m’) (comment lire les erreurs détaillées en rouge par python) 
-- input / print
-- retour sur les pb de typage : formule magique : ...=float(input(« ... »)) 
+Souvent, on peut suggérer facilement à Python le type utilisé. Par exemple, `a=2` est de type `ìnt`, `a=2.0` est de type `float`, `a='2'` ou `a="2"` est de type `str`.
 
-4) librairies :
-- comment les appeler (deux façons : avec ou sans le « as ») 
-Est-ce nécessaire d'indiquer les deux façons? On peut balancer " from truc import * " partout non?
+Si Python ne sait pas trop quel est le type d'une variable, il essaye de faire un choix (par exemple il considère que la variable est de type "texte" `str`) ou alors il renvoie un message d'erreur.
 
-- 2-3 exemples avec les librairies classiques (math.pi, math.sqrt…)
+Les messages d'erreur apparaissent en rouge dans le shell. Même s'ils sont indigestes, il faut expliquer aux élèves que dans un message d'erreur il y a deux informations très utiles :
+ - une explication sur l'erreur (par exemple le mot-clé "typeError" signale qu'il s'agit d'une erreur de typage)
+ - la ligne du fichier où l'erreur a été rencontrée (en bleu et cliquable pour aller directement au bon endroit du fichier)
+ 
+Essayez de faire exécuter ces instructions :
+```python
+3*'13'
+'3'*'13'
+'3'+'13'
+3+'13'
+3*13
+3*13.0
+```
+### 3.c. Un truc pour aller vite dans le shell :
+
+On peut rappeler les instructions précédemment tapées en appuyant sur la flèche du haut.
+
+### 3.d. Deux fonctions d'entrée / sortie :
+ - `input()` permet de faire demander par Python à l'utilisateur de d'entrer quelque chose au clavier.
+ - `print()` permet de demander à Python l'affichage de quelque chose.
+
+Essayez de faire exécuter ces instructions :
+```python
+input("tapez quelque chose")
+a=input("tapez quelque chose")
+a
+print(a)
+type(a)
+```
+### 3.e. Retour sur les problèmes de typage : formule magique : ...=float(input(« ... »)) 
+
+Si vous avez essayé les lignes de code précédentes avec divers entrée tapées au clvier, vous avez peut-être remarqué que quel que soit ce qu'on tape, Python considère que ce qui vient du `ìnput()` est du type `str`.
+
+Du coup, cela va sans cesse provoquer des erreurs dans les programmes des élèves. Un des moyens d'éviter cela est de leur donner la ligne de `input` sous la forme suivante :
+
+```python
+a=float(input("tapez quelque chose"))
+```
+`a` sera alors automatiquement du type "nombre à virgule flottante", ce qui est en général ce qu'on veut.
+
+## 4. Librairies :
+Python ne charge pas toutes les commandes disponibles lorsqu'on le lance. Si on a besoin d'une commande non chargée, il faut demander le chargement de la librairie.
+```python
+print(sqrt(2))
+```
+solution :
+```python
+from math import sqrt 
+print(sqrt(2))
+```
+une autre solution (si on doit utiliser plusieurs fonctions du même module) : 
+```python
+import math
+print(math.sqrt(2))
+print(math.pi)
+```
+une autre solution (si on veut renommer le module) : 
+```python
+import math as m
+print(m.sqrt(2))
+print(m.pi)
+```
 - 2-3 exemples avec les librairies « maison » (entree_tk pour répondre au probleme levé précédemment?
     
 
@@ -49,7 +113,8 @@ Est-ce nécessaire d'indiquer les deux façons? On peut balancer " from truc imp
 - où les élèves doivent-ils enregistrer leur travail ?
 - ctrl +/ crl molette pour zoomer
 - le fait que la config est enregistrée automatiquement quand on quitte thonny
-- view > variables
+- view > variables pour voir le contenu des variables
+- tools > options < show lines numbers
 - debug et les différents types de « pas à pas »
 - exemple de programme :
 
@@ -63,6 +128,15 @@ print("Coordonnées du milieu : ("+str(xM)+" ; "+str(yM)+")")
 
 → exo : le refaire et l’améliorer en ajoutant de quoi afficher la distance AB
 → on peut demander exactement la même chose à une classe à condition d’écrire au tableau la « formule magique »
+
+6) gestion salle info
+
+ce qui ne marche pas : parler à un groupe d'élèves devant leur écran
+ce qui peut marcher :
+- faire se lever tout le groupe, venir devant le tableau et parler avec le vidéo-projecteur
+- verrouiller tous les écrans (ça peut se faire avec le logiciel...)(il y a souvent un ou deux écrans qui ne se verrouillent pas !), donner les consignes, puis déverrouiller
+- envoyer son écran dans les écrans de tous les élèves (avec la commande "démo" du logiciel ...), parler en montrant à l'écran en même temps, puis arrêter la démo (les élèves sont encore bluffés par cette manip pour le moment :-)
+ - annoncer au groupe "je vais vous envoyer l'écran de -nom d'élève-" (avec la commande clic droit > "laisser faire une démo" du logiciel ...), laisser l'élève faire sa démo (en l'incitant à parler de façon compréhensible), puis arrêter la démo (je ne sais pas comment faire alors je vérrouille / déverrouille !)
 
 6) un peu plus loin : 
 - comment envoyer du code aux élèves ? / comment récupérer du code qu’ils ont fait ?
