@@ -57,9 +57,10 @@ Essayez de faire exécuter ces instructions :
 3*13
 3*13.0
 ```
-### 3.c. Un truc pour aller vite dans le shell :
+### 3.c. Deux trucs :
 
-On peut rappeler les instructions précédemment tapées en appuyant sur la flèche du haut.
+ - pour aller vite dans le shell, on peut rappeler les instructions précédemment tapées en appuyant sur la flèche du haut
+ - pour mettre un commentaire, il suffit de le précéder d'un #
 
 ### 3.d. Deux fonctions d'entrée / sortie :
  - `input()` permet de faire demander par Python à l'utilisateur de d'entrer quelque chose au clavier.
@@ -85,6 +86,7 @@ a=float(input("tapez quelque chose"))
 `a` sera alors automatiquement du type "nombre à virgule flottante", ce qui est en général ce qu'on veut.
 
 ## 4. Librairies :
+### 4.a. Généralités :
 Python ne charge pas toutes les commandes disponibles lorsqu'on le lance. Si on a besoin d'une commande non chargée, il faut demander le chargement de la librairie.
 ```python
 print(sqrt(2))
@@ -106,8 +108,34 @@ import math as m
 print(m.sqrt(2))
 print(m.pi)
 ```
-- 2-3 exemples avec les librairies « maison » (entree_tk pour répondre au probleme levé précédemment?
-    
+### 4.b. Quelques exemples avec les librairies « maison » 
+
+La librairie `entree_tk` permet de répondre au problème de typage évoqué précédemment :
+
+```python
+from entree_tk import *
+demander_texte()
+a=demander_reel()
+print(type(a))
+print(a)
+```
+La librairie `graphique` permet d'afficher facilement une fenêtre graphique où on fera par exemple afficher la courbe d'une fonction.
+
+```python
+from graphique import *
+creer_fenetre()
+trace_segment(1,2,3,5)
+trace_point(3,3)
+```
+Un autre exempke, plus élaboré :
+```python
+from math import *
+from graphique import *
+creer_fenetre()
+for i in range(100): #i va de 0 à 100
+    x=i/10-5 #x va de -5 à 5
+    trace_point(x,cos(x))
+```
 
 5) python avec les élèves : prise en main
 - où les élèves doivent-ils enregistrer leur travail ?
